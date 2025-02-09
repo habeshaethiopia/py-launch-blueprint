@@ -41,8 +41,8 @@ build-backend = "hatchling.build"
 
 [tool.setuptools_scm]
 write_to = "py_launch_blueprint/_version.py"
-fallback_version = "0.0.1"
-version_scheme = "post-release"
+fallback_version = "0.0.0"
+
 
 [tool.ruff]
 # Target Python Version
