@@ -133,7 +133,6 @@ alias pc := pre-commit-run
     rm -rf *.egg-info
     rm -rf .venv
     rm -rf {{py_package_name}}/__pycache__/
-    uv pip uninstall py_launch_blueprint
 
 # Alternative commands when virtual environment is activated:
 # These commands can be used after running 'source .venv/bin/activate'
