@@ -43,7 +43,6 @@ build-backend = "hatchling.build"
 write_to = "py_launch_blueprint/_version.py"
 fallback_version = "0.0.0"
 
-
 [tool.ruff]
 # Target Python Version
 target-version = "py310"
