@@ -123,17 +123,42 @@ alias pc := pre-commit-run
 
 # Clean up temporary files and caches
 @clean:
+    # Remove pytest cache
     rm -rf .pytest_cache
+    
+    # Remove mypy cache
     rm -rf .mypy_cache
+    
+    # Remove ruff cache
     rm -rf .ruff_cache
+    
+    # Remove coverage files
     rm -rf .coverage
     rm -rf htmlcov
+    
+    # Remove build artifacts
     rm -rf dist
     rm -rf build
+    
+    # Remove egg info
     rm -rf *.egg-info
+    
+    # Remove virtual environment
     rm -rf .venv
-    rm -rf {{py_package_name}}/__pycache__/
-    rm -f {{py_package_name}}/_version.py
+    
+    # Remove __pycache__ directories
+    find . -type d -name "__pycache__" -exec rm -rf {} +
+    
+    # Remove dynamically generated _version.py
+    rm -f py_launch_blueprint/_version.py
+    
+    # Uninstall the package from the current environment (if installed)
+    pip uninstall -y py_launch_blueprint || true
+    
+    # Clear pip cache
+    pip cache purge
+    
+    echo "Cache and temporary files cleaned successfully!"
 
 
 # Alternative commands when virtual environment is activated:
