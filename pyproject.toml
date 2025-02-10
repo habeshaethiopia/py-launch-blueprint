@@ -48,7 +48,6 @@ local_scheme = "no-local-version"
 # Target Python Version
 target-version = "py310"
 
-
 # Line length
 line-length = 88
 lint.select = [
